@@ -2,13 +2,21 @@ require "natto"
 
 module KyoIndustry
   class Analizer
-    def morpheme(text)
+    def morpheme(text, type)
       natto = Natto::MeCab.new
       @result = ""
 
-      natto.parse(text) do |n|
-        break if n.surface == ""
-        @result += "#{n.surface}  :  #{n.feature}<br />"
+      case type
+      when "surface"
+        natto.parse(text) do |n|
+          break if n.surface == ""
+          @result += "#{n.surface}<br />"
+        end
+      when "feature"
+        natto.parse(text) do |n|
+          break if n.surface == ""
+          @result += "#{n.feature}<br />"
+        end
       end
 
       return @result

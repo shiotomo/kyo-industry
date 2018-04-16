@@ -11,7 +11,8 @@ post "/" do
   analizer = KyoIndustry::Analizer.new
 
   @text = params[:text]
-  @result = analizer.morpheme(@text)
+  @surface= analizer.morpheme(@text, "surface")
+  @feature = analizer.morpheme(@text, "feature")
 
   erb :index
 end
