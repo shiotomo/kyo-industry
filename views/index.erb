@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KyoIndustry</title>
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- bootstrap -->
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1 style="text-align: center">誰でも形態素解析</h1>
+    <hr />
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+          <form action="/api/analyze" method="post">
+            <div class="field">
+              <input type="text" name="text" class="form-control">
+            </div>
+            <div class="action" style="text-align: center">
+              <input type="submit" value="解析" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+  </body>
+</html>
