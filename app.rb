@@ -7,10 +7,13 @@ get "/" do
   erb :index
 end
 
-post "/api/analyze" do
+post "/" do
   analizer = KyoIndustry::Analizer.new
 
   @result = analizer.morpheme(params[:text])
 
   erb :index
+end
+
+post "/api/analizer" do
 end
