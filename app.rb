@@ -10,7 +10,8 @@ end
 post "/" do
   analizer = KyoIndustry::Analizer.new
 
-  @result = analizer.morpheme(params[:text])
+  @text = params[:text]
+  @result = analizer.morpheme(@text)
 
   erb :index
 end
