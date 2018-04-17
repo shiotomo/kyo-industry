@@ -2,6 +2,11 @@
 
 ## 誰でも形態素解析ツール
 
+### 実行
+```
+bundle exec unicorn -E production -c unicorn.rb -p4567
+```
+
 #### memo
 mecabのPATHを通す
 ```

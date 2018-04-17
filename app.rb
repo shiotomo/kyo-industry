@@ -1,21 +1,24 @@
-require "sinatra"
+require "sinatra/base"
+require "unicorn"
 require "sinatra/reloader"
 
 require_relative "./lib/analizer"
 
-get "/" do
-  erb :index
-end
+class MainApp < Sinatra::Base
+  get "/" do
+    erb :index
+  end
 
-post "/" do
-  analizer = KyoIndustry::Analizer.new
+  post "/" do
+    analizer = KyoIndustry::Analizer.new
 
-  @text = params[:text]
-  @surface= analizer.morpheme(@text, "surface")
-  @feature = analizer.morpheme(@text, "feature")
+    @text = params[:text]
+    @surface= analizer.morpheme(@text, "surface")
+    @feature = analizer.morpheme(@text, "feature")
 
-  erb :index
-end
+    erb :index
+  end
 
-post "/api/analizer" do
+  post "/api/analizer" do
+  end
 end
