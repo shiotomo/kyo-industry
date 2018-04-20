@@ -9,7 +9,7 @@ https://kyo-industry.tomosse.work/
   
 サーバサイドでmecabを動かしています。
 
-#### 仕様ツール
+#### 使用ツール
 - Ruby 2.5.0
 - Sinatra
 - Unicorn

@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "unicorn"
 require "sinatra/reloader"
+require "json"
 
 require_relative "./lib/analizer"
 
@@ -13,12 +14,22 @@ class MainApp < Sinatra::Base
     analizer = KyoIndustry::Analizer.new
 
     @text = params[:text]
-    @surface= analizer.morpheme(@text, "surface")
+    @surface = analizer.morpheme(@text, "surface")
     @feature = analizer.morpheme(@text, "feature")
 
     erb :index
   end
 
-  post "/api/analizer" do
+  # API
+  # {"text" : "内容"}のJSONをPOSTされたら、形態素解析した結果を返却する
+  post "/api/analizer", provides: :json do
+    params = JSON.parse request.body.read
+
+    if params["text"]
+      analizer = KyoIndustry::Analizer.new
+      @result = analizer.morpheme(params["text"])
+
+      @result
+    end
   end
 end
