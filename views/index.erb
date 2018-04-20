@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>誰でも簡単形態素解析</title>
     <!-- jquery -->
     <script src="/js/jquery.js"></script>
@@ -37,7 +38,6 @@
               <p style="text-align: center"><b><%= @text %></b></p>
             </div>
           </div>
-
           <div class="panel panel-success">
             <div class="panel panel-heading">
               <h2 style="text-align: center">解析結果</h2>
@@ -54,6 +54,7 @@
             </div> 
           </div>
           <hr />
+
           <!-- モーダルウィンドウを表示させるボタン -->
           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#help">説明</button>
           <p style="text-align: center">
