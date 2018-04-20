@@ -26,7 +26,7 @@ module KyoIndustry
     end
 
     # API用
-    def morpheme(text)
+    def api_morpheme(text)
       natto = Natto::MeCab.new
       @result = ""
 

@@ -3,9 +3,9 @@
 ## 誰でも形態素解析ツール
 
 #### 説明
-誰でも簡単に形態素解析行えるように作成したツールです。  
+誰でも簡単に形態素解析を行えるように作成したツールです。  
 以下のURLからお使いいただけます。  
-https://kyo-industry.tomosse.work/
+https://kyo-industry.tomosse.work
   
 サーバサイドでmecabを動かしています。
 

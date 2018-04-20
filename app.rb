@@ -27,7 +27,7 @@ class MainApp < Sinatra::Base
 
     if params["text"]
       analizer = KyoIndustry::Analizer.new
-      @result = analizer.morpheme(params["text"])
+      @result = analizer.api_morpheme(params["text"])
 
       @result
     end

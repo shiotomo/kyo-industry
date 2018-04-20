@@ -17,6 +17,7 @@
       <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
+          <!-- 入力フォーム -->
           <form action="/" method="post">
             <div class="field">
               <input type="text" name="text" class="form-control">
@@ -28,14 +29,14 @@
 
           <!-- ここに実行結果を表示 -->
           <hr />
-            <div class="panel panel-info">
-              <div class="panel panel-heading">
-                <h2 style="text-align: center">解析文</h2>
-              </div>
-              <div class="panel panel-body">
-                <p style="text-align: center"><b><%= @text %></b></p>
-              </div>
+          <div class="panel panel-info">
+            <div class="panel panel-heading">
+              <h2 style="text-align: center">解析文</h2>
             </div>
+            <div class="panel panel-body">
+              <p style="text-align: center"><b><%= @text %></b></p>
+            </div>
+          </div>
 
           <div class="panel panel-success">
             <div class="panel panel-heading">
@@ -52,8 +53,44 @@
               </div>
             </div> 
           </div>
+          <hr />
+          <!-- モーダルウィンドウを表示させるボタン -->
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#help">説明</button>
+          <p style="text-align: center">
+            &copy; kyo-industry shiotomo 2018
+          </p>
 
+
+          <!-- モーダルウィンドウの内容 -->
+          <div class="modal fade" id="help">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" style="text-align: center">誰でも簡単形態素解析ツール kyo-industry</h4>
+                </div>
+                <div class="modal-body">
+                  <h4 style="color: blue">このツールは？</h4>
+                  <p>
+                    誰でも簡単に形態素解析を行えるように作成したツールです。
+                    <br />
+                    入力フォームに形態素解析したい文章をいれてください。
+                  </p>
+                  <h4 style="color: blue">APIについて</h4>
+                  <p>
+                    kyo-industryにはAPI機能があります。
+                    <br />
+                    https://kyo-industry.tomosse.work/api/analiserに{"text": "解析にしたい文"}といった構成のJSONをPOSTしてあげると、POSTした文の形態素解析を行った結果が返ってきます。
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="col-sm-1"></div>
       </div>
     </div>
