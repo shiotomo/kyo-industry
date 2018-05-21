@@ -17,7 +17,7 @@ https://kyo-industry.tomosse.work
 - natto
 
 #### memo
-mecabのインストール  
+__mecabのインストール__  
 ubuntu
 ```
 sudo apt-get -y install mecab mecab-ipadic-utf8
